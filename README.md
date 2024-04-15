@@ -6,7 +6,7 @@ Guess the Movie is a simple web-based game where players guess the name of a mov
 
 ## How to Play
 
-1. Open the `index.html` file in a web browser.
+1. Open the `gtmovie.html` file in a web browser.
 2. You'll see a grid of bomb images with input fields underneath.
 3. Guess the correct letter for each bomb and type it into the corresponding input field.
 4. If your guess is correct, the bomb remains intact. If it's incorrect, the bomb explodes.
