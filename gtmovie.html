@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    <style>
+        #game {
+            text-align: center;
+            font-size: 55px;
+            font-family: Arial;
+            margin-bottom: 10px;
+        }
+        #bomb,
+        #bomb1,
+        #bomb2,
+        #bomb3 {
+            height: 200px;
+            width: 75%;
+            margin-left: 5%;
+            margin-top: 0px;
+        }
+        #txt,
+        #txt1,
+        #txt2,
+        #txt3{
+            height: 90px;
+            width: 150px;
+            margin-left: 20%;
+            margin-top: 20px;
+            text-align: center;
+            text-size-adjust: 20px;
+        }
+        #txt:focus,       
+        #txt1:focus,
+        #txt2:focus,
+        #txt3:focus {
+            border: 4px solid rgb(183, 68, 15) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center><p id="game">GUESS THE MOVIE</p></center>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">
+                <img src="img/bomb.jpg" id="bomb" oninput="checkChar('txt', 'bomb')">
+                <input type="text" id="txt" oninput="this.value = this.value.toUpperCase(); checkChar('txt', 'bomb','txt1')">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <img src="img/bomb.jpg" id="bomb1" oninput="checkCharr('txt1', 'bomb1')">
+                <input type="text" id="txt1" oninput="this.value = this.value.toUpperCase(); checkCharr('txt1', 'bomb1','txt2')">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <img src="img/bomb.jpg" id="bomb2" oninput="checkCharrr('txt2', 'bomb2')">
+                <input type="text" id="txt2" oninput="this.value = this.value.toUpperCase(); checkCharrr('txt2', 'bomb2','txt3')">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <img src="img/bomb.jpg" id="bomb3" oninput="checkCharrrr('txt3', 'bomb3')">
+                <input type="text" id="txt3" oninput="this.value = this.value.toUpperCase(); checkCharrrr('txt3', 'bomb3','')">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkChar(txt, bomb,txt1) {
+            const input = document.getElementById(txt);
+            const bombImage = document.getElementById(bomb);
+            const correctChar = 'A';
+            
+
+            if (input.value.toUpperCase() === correctChar) {
+                input.readOnly = true;
+                if (txt1) {
+                    document.getElementById(txt1).focus(); 
+                }
+            }
+            else {
+                if (txt1) {
+                    document.getElementById(txt1).focus(); 
+                }
+                input.disabled = true;
+                bombImage.src = "img/bomb blastt.png";
+            }
+        }
+        function checkCharr(txt1, bomb1,txt2) {
+            const input = document.getElementById(txt1);
+            const bombImage = document.getElementById(bomb1);
+            const correctChar = 'B';
+            
+
+            if (input.value.toUpperCase() === correctChar) {
+                input.readOnly = true;
+                if (txt2) {
+                    document.getElementById(txt2).focus(); 
+                }
+            }
+            else {
+                if (txt2) {
+                    document.getElementById(txt2).focus(); 
+                }
+                input.disabled = true;
+                bombImage.src = "img/bomb blastt.png";
+            }
+        }
+        function checkCharrr(txt2, bomb2,txt3) {
+            const input = document.getElementById(txt2);
+            const bombImage = document.getElementById(bomb2);
+            const correctChar = 'C';
+            
+
+            if (input.value.toUpperCase() === correctChar) {
+                input.readOnly = true;
+                if (txt3) {
+                    document.getElementById(txt3).focus(); 
+                }
+            }
+             else {
+                if (txt3) {
+                    document.getElementById(txt3).focus(); 
+                }
+                input.disabled = true;
+                bombImage.src = "img/bomb blastt.png";
+            }
+        }
+        function checkCharrrr(txt3, bomb3) {
+            const input = document.getElementById(txt3);
+            const bombImage = document.getElementById(bomb3);
+            const correctChar = 'D';
+            
+
+            if (input.value.toUpperCase() === correctChar) {
+                input.readOnly = true;
+            } else {
+                input.disabled = true;
+                bombImage.src = "img/bomb blastt.png";
+            }
+        }
+
+    </script>
+</body>
+</html>
